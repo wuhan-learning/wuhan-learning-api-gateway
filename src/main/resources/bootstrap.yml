@@ -14,3 +14,13 @@ spring:
         instance-id: ${spring.application.name}:${server.port}
         service_name: mst-api-gateway
         preferIpAddress: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - routes
+          - filters
