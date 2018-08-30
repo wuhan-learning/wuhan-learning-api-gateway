@@ -2,6 +2,7 @@ server:
   port: 8900
 
 zuul:
+  ignored-patterns: /**/user/goods
   routes:
     order:
       path: /order/**
