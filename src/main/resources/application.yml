@@ -3,7 +3,18 @@ server:
 
 zuul:
   routes:
-    order: mst-order-service
-    goods: mst-goods-service
-    user: mst-user-service
+    order:
+      path: /order/**
+      serviceId: mst-order-service
+      stripPrefix: false
+    goods:
+      path: /goods/**
+      serviceId: mst-goods-service
+      stripPrefix: false
+    user:
+      path: /user/**
+      serviceId: mst-user-service
+      stripPrefix: false
+  strip-prefix: true
+  prefix: /api
 
