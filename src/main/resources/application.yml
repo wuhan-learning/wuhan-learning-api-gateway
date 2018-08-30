@@ -18,7 +18,5 @@ zuul:
       path: /user/**
       serviceId: mst-user-service
       stripPrefix: false
-  strip-prefix: true
-  prefix: /api
   semaphore:
       max-semaphores: 500
