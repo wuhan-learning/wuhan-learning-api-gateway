@@ -1,0 +1,18 @@
+server:
+  port: 8900
+
+zuul:
+  routes:
+    order:
+      path: /order/**
+      serviceId: mst-order-service
+      stripPrefix: false
+    goods:
+      path: /goods/**
+      serviceId: mst-goods-service
+      stripPrefix: false
+    user:
+      path: /user/**
+      serviceId: mst-user-service
+      stripPrefix: false
+
