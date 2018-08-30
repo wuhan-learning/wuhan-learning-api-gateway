@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: mst-api-gateway
+  cloud:
+    consul:
+      enabled: true
+      port: 8500
+      host: 127.0.0.1
+      ribbon:
+        enabled: true
+      discovery:
+        enabled: true
+        register: true
+        instance-id: ${spring.application.name}:${server.port}
+        service_name: mst-api-gateway
+        preferIpAddress: true
