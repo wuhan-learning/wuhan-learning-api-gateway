@@ -3,6 +3,8 @@ server:
 
 zuul:
   ignored-patterns: /**/user/goods
+  sensitive-headers: Cookie, Set-Cookie
+  ignored-headers: g1
   routes:
     order:
       path: /order/**
