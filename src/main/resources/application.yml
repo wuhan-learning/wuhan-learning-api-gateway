@@ -2,9 +2,7 @@ server:
   port: 8900
 
 zuul:
-  ignored-patterns: /**/user/goods
   sensitive-headers: Cookie, Set-Cookie
-  ignored-headers: g1
   routes:
     order:
       path: /order/**
@@ -20,3 +18,4 @@ zuul:
       stripPrefix: false
   semaphore:
       max-semaphores: 500
+  ribbon-isolation-strategy: semaphore
