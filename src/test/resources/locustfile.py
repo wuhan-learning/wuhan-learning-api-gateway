@@ -8,12 +8,12 @@ class GetGoodsById(TaskSet):
 class GetAllGoods(TaskSet):
     @task(1)
     def getAllGoods(self):
-        self.client.get("/user/goods?action=close")
+        self.client.get("/user/goods")
 
 class GetAllGoodsTimeout(TaskSet):
     @task(1)
     def GetAllGoodsTimeout(self):
-        self.client.get("/user/goods")
+        self.client.get("/user/goods?action=sleep")
 
 class UserBehavior(TaskSet):
     tasks = {
