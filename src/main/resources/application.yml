@@ -19,3 +19,35 @@ zuul:
   semaphore:
       max-semaphores: 500
   ribbon-isolation-strategy: semaphore
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - routes
+          - filters
+          - hystrix.stream
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          semaphore:
+            maxConcurrentRequests: 10
+      circuitBreaker:
+        requestVolumeThreshold: 20
+        errorThresholdPercentage: 50
+        sleepWindowInMilliseconds: 5000
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 10000
+
+ribbon:
+  ReadTimeout: 2000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
